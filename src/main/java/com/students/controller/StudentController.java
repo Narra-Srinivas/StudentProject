@@ -64,4 +64,13 @@ public class StudentController {
         studentService.deleteStudent(id);
         return "redirect:/students";
     }
+    @GetMapping(value = "/**")
+    public String defaultPage(){
+        return "redirect:/not_found";
+    }
+
+    @GetMapping("/not_found")
+    public String notFound(){
+        return "not_found";
+    }
 }
